@@ -1,0 +1,18 @@
+					DAY 1 ASSIGNMENT 
+
+ a.) for(i=1;i<=n;i++)
+	for(j=i;i<=n;j++)
+		printf("Hi");
+	 
+      According to given ques. the time complexity is "infinite" coz it gives a infinite loop.
+		 		(or)
+     In case if the condition statement in inner loop is "j<=n" instead of "i<=n",then  T.C = O(n^2).
+
+
+b.) for(i=1;i<=n;i*=3)
+	for(j=1;i<=n;j++)
+		printf("Hello");
+
+	According to given ques. the time complexity is "infinite" coz it gives a infinite loop.
+		 		(or)
+ 	In case if the condition statement in inner loop is "j<=n" instead of "i<=n",then  T.C = O(n*(logn(base3))).
