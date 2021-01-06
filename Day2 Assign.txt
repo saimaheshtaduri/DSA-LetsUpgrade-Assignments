@@ -1,0 +1,55 @@
+
+					DAY 2  ASSIGNMENT
+
+
+1)
+
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+    int i,j;
+    for(i=1;i<=4;i++){
+        for(j=1;j<=((2*i)-1);j++){
+            if(j%2!=0) printf("%d",i);
+            else printf("*");
+        }
+        printf("\n");
+    }
+	 
+    return 0;
+}
+
+===========================================================================
+
+2)
+
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+    int i,j;
+    for(i=1;i<=5;i++){
+        for(j=1;j<=i;j++){
+            if((i%2==0 && j%2==0) || (i%2!=0 && j%2!=0)) printf("1");
+            else printf("0");
+        }
+        printf("\n");
+    }
+	 
+    return 0;
+}
+
+=============================================================================
+
+3)
+
+     SIMILARITIES:
+          > Both array name and pointer variable store the address of another variables.
+	  > In case of array, it stores the address of its first elemenet(at index 0). 
+
+     DIFFERENCES:
+          > Using array name, whole array can be accessed but using pointer variable only one element can be accessed.
+          > sizeof() operator returns size of array in case of array name whereas size of int in case of pointer variable.
+
+
