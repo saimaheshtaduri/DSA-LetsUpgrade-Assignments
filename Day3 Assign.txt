@@ -1,0 +1,59 @@
+				
+				DAY 3 ASSIGNMENT 
+
+a)
+
+#include <stdio.h>
+
+//deletes the first element in array
+
+void del_begin(int a[],int *n){
+    int i;
+    for(i=1;i<(*n);i++){
+        a[i-1]=a[i];
+    }
+    (*n)--;
+}
+
+//deletes the element at position p
+
+void del_atpos(int a[],int *n,int p){
+    int i;
+    for(i=p;i<(*n);i++){
+        a[i-1]=a[i];
+    }
+    (*n)--;
+}
+
+int main() {
+    int n=10,a[10]={1,2,3,4,5,6,7,8,9,0};
+    del_atpos(a,&n,8);
+    del_begin(a,&n);
+    for(int i=0;i<n;i++) printf("%d ",a[i]);
+    
+    return 0;
+}
+
+
+=======================================================================
+
+
+b)
+
+#include <stdio.h>
+
+int main() {
+    int n=6,a[6]={2,4,5,1,7,9},res[6],k,i,j=0;
+    scanf("%d",&k);
+    k=k%n;
+    for(i=k;i<n;i++) res[j++]=a[i];
+    for(i=0;i<k;i++) res[j++]=a[i];
+    
+    for(i=0;i<j;i++) printf("%d ",res[i]);
+    
+    
+    return 0;
+}
+
+
+
