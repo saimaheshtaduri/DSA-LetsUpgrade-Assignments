@@ -1,0 +1,48 @@
+
+					DAY 5 ASSIGNMENT
+
+Q 1)
+
+void insertion_sort(int a[], int n){
+	 int i,j,temp;
+	 for(i=1;i<n;i++){
+	      temp = a[i];
+	      j=i-1;
+	      while(j>0 && a[j] > temp){
+		    a[j+1]=a[j];
+		    j=j-1;
+	      }
+	      a[j+1] = temp;
+           }
+	 
+           for(i=0;i<n;i++) printf("%d ",a[i]);
+}
+	
+
+====================================================================================
+
+Q 2)
+
+
+int max_ele(int size,int stack[]){
+    int top=0,max = stack[top];
+    while(top<size){
+	if(stack[top] >= max )  max = stack[top];
+	top++;
+    }
+    return max;
+}
+
+======================================================================================
+
+Q 3)
+
+int min_ele(int size,int stack[]){
+    int top=0,min = stack[top];
+    while(top<size){
+	if(stack[top] <= min )  min = stack[top];
+	top++;
+    }
+    return min;
+}
+	    
