@@ -1,0 +1,134 @@
+							DAY 6 ASSIGNMENT
+
+
+Q 1)
+
+#include <iostream>
+using namespace std;
+
+int size=10, q[10],f=-1,r=-1;
+
+void insert(int n){
+    if(r==-1){
+        q[++f]=n;
+        r++;
+    }
+    else if(f==(r+1)%size){
+        cout<<"Overflow conditon"<<endl;
+    }
+    else{
+        q[++r]=n;
+    }
+}
+
+int del(){
+    if(f==-1) cout<<"Underflow"<<endl;
+    else if(f==r){
+       int x=q[f];
+       f=-1;
+       r=-1;
+       return x;
+    }
+    else{
+        int x= q[f];
+        f++;
+        return x;
+    }
+}
+
+void display(){
+    int i;
+    for(i=0;i<=r;i++){
+        cout<<q[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main(){
+    insert(1); 
+    insert(25);
+    insert(78);
+    del();
+    display();
+
+    return 0;
+}
+
+======================================================================================================
+
+Q 2)
+
+#include <iostream>
+using namespace  std;
+
+int main(){
+    int n,p,res=1,count=0;
+    cout<<"Enter the number of numbers you want to enter: ";
+    cin>>n;
+    while(n--){
+        cin>>p;
+        while(p%10 == 0){
+            count++;
+            p=p/10;
+        }
+        res*=p;
+    }
+    cout<<res;
+    while(count--){
+        cout<<0;
+    }
+
+    return 0;
+}
+
+========================================================================================================
+
+Q 3)
+
+#include <iostream>
+using namespace  std;
+
+int size=10,stack[10],top=-1,minstack[10];
+
+void push(int n){
+    if(top==size){
+        cout<<"OverFlow"<<endl;
+    }
+    else if(top==-1){
+         top++;
+         stack[top]=n;
+         minstack[top]=n;
+        
+    }
+    else{
+        top++;
+        stack[top]=n;
+        if(stack[top]<=minstack[top-1]) minstack[top]=n;
+        else minstack[top]=minstack[top-1];
+       
+    }
+}
+
+int pop(){
+    if(top==-1) cout<<"Underflow"<<endl;
+    else{
+        return stack[top--];
+    }
+}
+
+
+int min(){
+    return minstack[top];
+}
+
+
+int main(){
+    push(19);
+    push(21);
+    push(35);
+    push(1);
+    push(12);
+    cout<<min();
+  
+    return 0;
+}
